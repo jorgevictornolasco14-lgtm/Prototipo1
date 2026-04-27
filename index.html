@@ -10,9 +10,14 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="navbar-brand">ARCHE CONSULTORIA E DESENVOLVIMENTO</div>
-        <ul class="nav-links">
+    <nav class="navbar" id="mainNav">
+        <div class="navbar-top">
+            <div class="navbar-brand">ARCHE CONSULTORIA E DESENVOLVIMENTO</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#sobre">Sobre nós</a></li>
@@ -22,7 +27,6 @@
     </nav>
 
     <!-- HERO -->
-    <!-- Adicione sua foto em ../img/hero-bg.jpg para substituir o fundo escuro -->
     <header id="home" class="hero">
         <div class="hero-content">
             <div class="hero-left">
@@ -34,33 +38,59 @@
                 <a href="#servicos" class="hero-cta">Conheça nossos serviços</a>
             </div>
         </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span></span>
+        </div>
     </header>
 
     <!-- SERVIÇOS -->
-    <!-- Adicione sua foto em ../img/consultoria.jpg -->
-    <section id="servicos" class="services">
+    <section id="servicos" class="services" data-reveal>
         <div class="services-inner">
             <div class="services-image"></div>
             <div class="services-list">
                 <div class="service-item">
                     <span class="service-num">01</span>
+                    <h3 class="service-title">Gestão de Pessoas &amp; Liderança</h3>
                     <p>Desenvolvemos líderes, avaliamos profissionais e fortalecemos culturas organizacionais, conectando desempenho, bem-estar e resultado sustentável.</p>
                 </div>
                 <div class="service-item">
                     <span class="service-num">02</span>
+                    <h3 class="service-title">Estruturação Organizacional</h3>
                     <p>Transformamos cenários de crescimento e mudança em modelos de gestão mais maduros, eficientes e alinhados à realidade do negócio.</p>
                 </div>
                 <div class="service-item">
                     <span class="service-num">03</span>
+                    <h3 class="service-title">Pesquisa de Mercado Laboral</h3>
                     <p>Estudos de mercado laboral são realizados para identificar tendências e oportunidades de crescimento profissional.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- STATS -->
+    <section class="stats" data-reveal>
+        <div class="stats-inner">
+            <div class="stat-item">
+                <strong>5+</strong>
+                <span>Anos de experiência</span>
+            </div>
+            <div class="stat-item">
+                <strong>50+</strong>
+                <span>Empresas atendidas</span>
+            </div>
+            <div class="stat-item">
+                <strong>200+</strong>
+                <span>Profissionais desenvolvidos</span>
+            </div>
+            <div class="stat-item">
+                <strong>3</strong>
+                <span>Pilares de atuação</span>
+            </div>
+        </div>
+    </section>
+
     <!-- SOBRE NÓS -->
-    <!-- Substitua .logo-block por <img src="../img/logo-arche.png"> se tiver o arquivo -->
-    <section id="sobre" class="about">
+    <section id="sobre" class="about" data-reveal>
         <div class="about-inner">
             <div class="about-logo">
                 <div class="logo-block">
@@ -82,12 +112,12 @@
 
     <!-- DEPOIMENTOS -->
     <section id="depoimentos" class="testimonials">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
             <span class="section-tag">Depoimentos</span>
             <h2>O que nossos clientes dizem</h2>
         </div>
         <div class="grid-testimonials">
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-reveal data-reveal-delay="0">
                 <div class="quote-icon">&#10077;</div>
                 <p class="testimonial-text">A Arche Consulting foi fundamental para estruturar nossa área de pessoas. A abordagem é profunda, humana e orientada a resultado real.</p>
                 <div class="testimonial-author">
@@ -98,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-reveal data-reveal-delay="1">
                 <div class="quote-icon">&#10077;</div>
                 <p class="testimonial-text">Clareza, estratégia e sensibilidade. A consultoria transformou nossa cultura organizacional de forma consistente e duradoura.</p>
                 <div class="testimonial-author">
@@ -109,7 +139,7 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card" data-reveal data-reveal-delay="2">
                 <div class="quote-icon">&#10077;</div>
                 <p class="testimonial-text">O diagnóstico organizacional que fizeram abriu nossos olhos para pontos cegos críticos. Um trabalho técnico e, ao mesmo tempo, muito humano.</p>
                 <div class="testimonial-author">
@@ -120,6 +150,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" data-reveal>
+        <div class="cta-inner">
+            <span class="section-tag">Vamos conversar</span>
+            <h2>Pronto para transformar<br>sua organização?</h2>
+            <p>Entre em contato e descubra como podemos ajudar sua empresa a crescer com base sólida.</p>
+            <a href="mailto:comercial@archedesenvolvimento.com.br" class="cta-btn">Fale com a gente</a>
         </div>
     </section>
 
@@ -138,7 +178,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact</h4>
+                <h4>Contato</h4>
                 <address>
                     Rua Expedicionário Elias Saade, 17, Eymard<br>
                     Belo Horizonte &ndash; CEP 31.910-620<br>
@@ -152,5 +192,6 @@
         </div>
     </footer>
 
+    <script src="./js/main.js"></script>
 </body>
 </html>
