@@ -71,7 +71,7 @@ exports.handler = async (event) => {
             },
         });
 
-        const destination = process.env.CONTACT_EMAIL || 'comercial@archedesenvolvimento.com.br';
+        const destination = process.env.CONTACT_EMAIL || 'renatanolasco78@gmail.com';
 
         await transporter.sendMail({
             from: `"Site Arche" <${process.env.SMTP_USER}>`,
