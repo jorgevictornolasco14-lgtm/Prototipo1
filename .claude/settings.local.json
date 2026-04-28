@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\renat\\\\Documents\\\\GitHub\\\\Prototipo1\\\\netlify\\\\functions\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\renat\\\\Documents\\\\GitHub\\\\Prototipo1\\\\public\\\\img\" -Force)",
+      "PowerShell(New-Item -ItemType File -Path \"c:\\\\Users\\\\renat\\\\Documents\\\\GitHub\\\\Prototipo1\\\\public\\\\img\\\\.gitkeep\" -Force)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\renat\\\\Documents\\\\GitHub\\\\Prototipo1\\\\style\" -Confirm:$false)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\renat\\\\Documents\\\\GitHub\\\\Prototipo1\\\\js\" -Confirm:$false)"
+    ]
+  }
+}

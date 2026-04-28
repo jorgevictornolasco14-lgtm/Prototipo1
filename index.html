@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arche Consultoria e Desenvolvimento</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -153,18 +153,59 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section" data-reveal>
-        <div class="cta-inner">
-            <span class="section-tag">Vamos conversar</span>
-            <h2>Pronto para transformar<br>sua organização?</h2>
-            <p>Entre em contato e descubra como podemos ajudar sua empresa a crescer com base sólida.</p>
-            <a href="https://wa.me/5531982929008" class="cta-btn" target="_blank">Fale com a gente</a>
+    <!-- CONTATO -->
+    <section id="contato" class="contact-section" data-reveal>
+        <div class="contact-inner">
+            <div class="contact-info">
+                <span class="section-tag">Fale conosco</span>
+                <h2>Vamos conversar<br>sobre seu projeto</h2>
+                <p>Preencha o formulário e entraremos em contato em até 24 horas úteis.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Telefone</span>
+                        <a href="tel:+5531982929008">(31) 98292-9008</a>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">E-mail</span>
+                        <a href="mailto:comercial@archedesenvolvimento.com.br">comercial@archedesenvolvimento.com.br</a>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-detail-label">Endereço</span>
+                        <span>Rua Exp. Elias Saade, 17 — Belo Horizonte, MG</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <input type="text" id="subject" name="subject" placeholder="Como podemos ajudar?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Descreva sua necessidade..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit" id="formSubmit">
+                    <span class="submit-text">Enviar mensagem</span>
+                    <span class="submit-loading" hidden>Enviando...</span>
+                </button>
+                <p class="form-feedback" id="formFeedback" hidden></p>
+            </form>
         </div>
     </section>
 
     <!-- RODAPÉ -->
-    <footer id="contato" class="footer">
+    <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand-col">
                 <strong class="footer-name">ARCHE DESENVOLVIMENTO</strong>
@@ -192,6 +233,6 @@
         </div>
     </footer>
 
-    <script src="./js/main.js"></script>
+    <script src="./src/main.js"></script>
 </body>
 </html>

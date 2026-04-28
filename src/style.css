@@ -147,7 +147,7 @@ body {
     height: 100vh;
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.44)),
-        url('../img/hero-bg.jpg');
+        url('../public/img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-color: #2e404f;
@@ -261,7 +261,6 @@ body {
     to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Scroll reveal */
 [data-reveal] {
     opacity: 0;
     transform: translateY(28px);
@@ -290,7 +289,7 @@ body {
 
 .services-image {
     background-color: var(--teal-light);
-    background-image: url('../img/consultoria.jpg');
+    background-image: url('../public/img/consultoria.jpg');
     background-size: cover;
     background-position: center;
     height: 520px;
@@ -305,11 +304,10 @@ body {
 }
 
 .service-item {
-    transition: transform var(--transition);
-    cursor: default;
     border-left: 2px solid transparent;
     padding-left: 20px;
     transition: border-color var(--transition), transform var(--transition);
+    cursor: default;
 }
 
 .service-item:hover {
@@ -558,58 +556,174 @@ body {
 }
 
 /* =============================================
-   CTA
+   FORMULÁRIO DE CONTATO
    ============================================= */
-.cta-section {
+.contact-section {
     padding: 100px 8%;
     background: var(--off-white);
-    text-align: center;
     border-top: 1px solid var(--border);
 }
 
-.cta-inner {
-    max-width: 580px;
-    margin: 0 auto;
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
 }
 
-.cta-inner .section-tag {
-    margin-bottom: 16px;
+.contact-info {
+    position: sticky;
+    top: 120px;
 }
 
-.cta-inner h2 {
+.contact-info .section-tag {
+    margin-bottom: 14px;
+}
+
+.contact-info h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 700;
     color: var(--dark);
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
-.cta-inner p {
-    font-size: 0.95rem;
+.contact-info > p {
+    font-size: 0.9rem;
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 40px;
 }
 
-.cta-btn {
-    display: inline-block;
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact-detail-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+}
+
+.contact-detail a,
+.contact-detail span {
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.contact-detail a:hover { color: var(--teal); }
+
+.contact-form {
+    background: var(--white);
+    padding: 48px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--dark);
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 13px 16px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: var(--off-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    outline: none;
+    resize: none;
+    appearance: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--teal);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(26, 158, 142, 0.08);
+}
+
+.form-submit {
+    align-self: flex-start;
     background: var(--teal);
     color: var(--white);
-    text-decoration: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 16px 44px;
     border-radius: 2px;
+    cursor: pointer;
     transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
-.cta-btn:hover {
+.form-submit:hover:not(:disabled) {
     background: var(--teal-dark);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(26, 158, 142, 0.25);
+}
+
+.form-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.form-feedback {
+    font-size: 0.88rem;
+    padding: 14px 18px;
+    border-radius: 2px;
+    line-height: 1.5;
+}
+
+.form-feedback--success {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.form-feedback--error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
 }
 
 /* =============================================
@@ -704,7 +818,10 @@ body {
     .about { padding: 80px 6%; }
     .about-inner { grid-template-columns: 1fr; gap: 48px; }
     .testimonials { padding: 80px 6%; }
-    .cta-section { padding: 80px 6%; }
+    .contact-section { padding: 80px 6%; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .contact-info { position: static; }
+    .contact-form { padding: 32px 24px; }
     .footer { padding: 48px 6% 0; }
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
@@ -723,9 +840,7 @@ body {
 
     .nav-links.open { display: flex; }
 
-    .nav-links li {
-        border-bottom: 1px solid var(--border);
-    }
+    .nav-links li { border-bottom: 1px solid var(--border); }
 
     .nav-links a {
         display: block;
@@ -743,6 +858,7 @@ body {
     .navbar-top { padding: 14px 6% 12px; }
     .hero h1 { font-size: 2.5rem; }
     .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px 16px; }
     .footer-inner { grid-template-columns: 1fr; }
-    .cta-inner h2 { font-size: 1.8rem; }
 }
