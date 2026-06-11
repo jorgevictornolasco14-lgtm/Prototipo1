@@ -1,0 +1,12 @@
+{
+  "name": "arche-consultoria",
+  "version": "1.0.0",
+  "description": "Site institucional Arche Consultoria e Desenvolvimento",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
